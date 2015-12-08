@@ -1,0 +1,26 @@
+module import-test.main
+
+imports
+
+  Colorer
+  Menus
+  Syntax
+  Views
+
+language
+  
+  name : import-test
+  
+  extensions : dummy
+
+  table         : include/import-test.tbl
+  start symbols : Start
+  
+  provider : include/import_test.ctree
+  provider : include/import_test-java.jar
+  observer : editor-analyze (multifile)
+  
+references
+
+  reference _ : editor-resolve
+  hover _     : editor-hover

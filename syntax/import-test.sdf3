@@ -1,0 +1,23 @@
+module import-test
+
+imports
+  
+  Common
+
+context-free start-symbols
+  
+  Start
+
+context-free syntax
+  
+  Start.Dummy = [
+  module [ID]
+  [{Import "\n"}*]
+  [{Statement "\n"}*]
+  ]
+
+  Import.Import = [import [ID]]
+
+  Statement.Declare = [declare [ID]]
+
+  Statement.Reference = [reference [ID]]

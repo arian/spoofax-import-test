@@ -1,0 +1,24 @@
+module names
+
+imports
+
+  signatures/import-test-sig
+
+namespaces
+  Module
+  Item
+
+
+binding rules
+
+  Dummy(name, _, _):
+    defines Module name
+
+  Import(name):
+  	imports Item from Module name
+
+  Declare(name):
+    defines Item name
+
+  Reference(name):
+    refers to Item name
